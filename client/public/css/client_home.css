@@ -1,0 +1,27 @@
+html,
+body{
+    min-height: 100%;
+}
+
+body{
+    background-image: url("/images/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.head{
+	text-align: center;
+	color: indianred;
+}
+
+.head2{
+	text-align: center;
+	color: #7FB3D5;
+}
