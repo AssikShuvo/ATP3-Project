@@ -33,7 +33,7 @@
         </div>
 
         <div class="item3">
-            <a href="" >Create Event</a>
+            <a href="/client_create_event" >Create Event</a>
         </div>
 
         <div class="item4" >
@@ -43,8 +43,21 @@
         <div class="item5">
             <a href="/client_ongoing_projects" >Ongoing Projects</a>
         </div>
+
+        <div class="item6">
+            <a href="/client_upcoming_events" >Upcoming Events</a>
+        </div>
+
+        <div class="item7">
+            <a href="/client_ongoing_events" >Ongoing Events</a>
+        </div>
+
+        <div class="item8">
+            <a href="/client_finished_events" >Finished Events</a>
+        </div>
     
     </div>
     
 </body>
+
 </html>
