@@ -51,8 +51,26 @@ td{
     border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
-.td-details{
-    border: sloid 2x #76D7C4;
-	color: #009AFF;
-	text-decoration: none;    
+.delete-btn input[type="submit"]{
+    position: relative;
+    top: 175px;
+    left: 25px;
+    background: transparent;
+	border: none;
+	outline: none;
+	color: #ffffff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+    
+}
+
+.delete-msg{
+    position: relative;
+    font-size: 25px;
+    color: aquamarine;
+    top: 175px;
+    left: 25px;
 }

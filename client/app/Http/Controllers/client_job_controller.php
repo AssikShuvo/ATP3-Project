@@ -76,4 +76,21 @@ class client_job_controller extends Controller
 
         return Redirect('/client_previous_posts')->with('message', 'Updated Successfully.');
     }
+
+    public function client_job_delete($id){
+
+        $client_job_info = client_job_info::find($id);
+
+        return view('Client_Job.delete_job')->with('client_job_info', $client_job_info);
+    }
+
+    public function client_job_destroy($id){
+        if(client_job_info::destroy($id)){
+            return redirect('/client_previous_posts');
+        }
+        else{
+            return redirect('/client_previous_posts'.$id);
+        }        
+    }
+
 }
