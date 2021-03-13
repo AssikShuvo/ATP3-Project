@@ -13,6 +13,14 @@
         <a href="/client_homepage">Back</a>
     </div>
 
+    <div class="msg">
+
+        @if(session()->has('message'))
+            {{ session()->get('message') }}
+        @endif
+
+    </div>
+
     <div class="tbl-content">
 
         <table border="2" cellpadding="0" cellspacing="0">

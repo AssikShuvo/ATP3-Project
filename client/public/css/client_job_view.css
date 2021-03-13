@@ -48,7 +48,14 @@ td{
 }
 
 .td-details{
-    
 	color: #009AFF;
 	text-decoration: none;    
+}
+
+.msg{
+    position:relative;
+    top: 25px;
+    left: 25px;
+    color: #009AFF;
+    font-size: 30px;
 }

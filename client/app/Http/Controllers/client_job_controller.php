@@ -53,4 +53,27 @@ class client_job_controller extends Controller
 
         return view('Client_Job.job_details')->with('client_job_info', $client_job_info);
     }
+
+    public function client_job_edit($id){
+
+        $client_job_info = client_job_info::find($id);
+
+        return view('Client_Job.client_job_edit')->with('client_job_info', $client_job_info);
+    }
+
+
+    public function client_job_update($id, Request $req){
+
+        $client_job_info = client_job_info::find($id);
+
+        $client_job_info->job_title = $req->job_title;
+        $client_job_info->job_price = $req->job_price;
+        $client_job_info->job_category = $req->job_category;
+        $client_job_info->job_description = $req->job_description;
+        $client_job_info->job_delivery_time = $req->job_delivery_time;
+
+        $client_job_info->save();
+
+        return Redirect('/client_previous_posts')->with('message', 'Updated Successfully.');
+    }
 }
