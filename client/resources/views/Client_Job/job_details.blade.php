@@ -20,7 +20,7 @@
 
     <div class="back">
 
-        <a href="/client_previous_posts">Back</a>
+        <a href="/client_homepage">Home</a>
 
     </div>
 
@@ -62,6 +62,6 @@
 
     </div>
 
-    
 </body>
+
 </html>

@@ -32,3 +32,5 @@ Route::post('/client_create_event', [client_event_controller::class, 'store_even
 Route::get('/client_upcoming_events', [client_event_controller::class, 'client_upcoming_events']);
 Route::get('/client_ongoing_events', [client_event_controller::class, 'client_ongoing_events']);
 Route::get('/client_finished_events', [client_event_controller::class, 'client_finished_events']);
+
+Route::get('/client_event_details/{id}', [client_event_controller::class, 'client_event_details']);

@@ -47,4 +47,11 @@ class client_event_controller extends Controller
 
         return view('Client_Event.readonly_view_event')->with('client_event_info', $client_event_info);
     }
+
+    public function client_event_details($id){
+
+        $client_event_info = client_event_info::find($id);
+
+        return view('Client_Event.event_details')->with('client_event_info', $client_event_info);
+    }
 }

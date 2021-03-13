@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/client_event_view.css">
-    <title>Previous Posts</title>
+    <title>Event Views</title>
 </head>
 <body>
     
@@ -47,7 +47,7 @@
                 <td> {{ $client_event_info[$i]['event_stop_datetime'] }} </td>
 
                 <td><a class="td-details" href="/client_event_details/{{ $client_event_info[$i]['id'] }}">Details</a></td>
-                <td><a class="td-details" href="/client_event_details/{{ $client_event_info[$i]['id'] }}">Participants</a></td>
+                <td><a class="td-details" href="/client_event_participants">Participants</a></td>
                 
             </tr>
 
