@@ -54,4 +54,29 @@ class client_event_controller extends Controller
 
         return view('Client_Event.event_details')->with('client_event_info', $client_event_info);
     }
+
+    public function client_event_edit($id){
+
+        $client_event_info = client_event_info::find($id);
+
+        return view('Client_Event.client_event_edit')->with('client_event_info', $client_event_info);
+    }
+
+
+    public function client_event_update($id, Request $req){
+
+        $client_event_info = client_event_info::find($id);
+
+        $client_event_info->event_title = $req->event_title;
+        $client_event_info->event_prize = $req->event_prize;
+        $client_event_info->event_category = $req->event_category;
+        $client_event_info->event_description = $req->event_description;
+        $client_event_info->event_start_datetime = $req->event_start_datetime;
+        $client_event_info->event_stop_datetime = $req->event_stop_datetime;
+
+        $client_event_info->save();
+
+        return Redirect('/client_upcoming_events')->with('message', 'Updated Successfully.');
+    }
+
 }

@@ -34,3 +34,6 @@ Route::get('/client_ongoing_events', [client_event_controller::class, 'client_on
 Route::get('/client_finished_events', [client_event_controller::class, 'client_finished_events']);
 
 Route::get('/client_event_details/{id}', [client_event_controller::class, 'client_event_details']);
+
+Route::get('/client_event_edit/{id}', [client_event_controller::class, 'client_event_edit']);
+Route::post('/client_event_edit/{id}', [client_event_controller::class, 'client_event_update']);
