@@ -86,7 +86,7 @@ class client_job_controller extends Controller
 
     public function client_job_destroy($id){
         if(client_job_info::destroy($id)){
-            return redirect('/client_previous_posts');
+            return redirect('/client_previous_posts')->with('message', 'Deleted Successfully.');
         }
         else{
             return redirect('/client_previous_posts'.$id);

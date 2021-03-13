@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/client_event_details.css">
-    <title>Job Details</title>
+    <title>Event Details</title>
 </head>
 
 <body>
 
     <div class="header">
 		
-        <h1 class="head">Job Details</h1>
+        <h1 class="head">Event Details</h1>
         
         <hr color="#BB8FCE">
     
@@ -20,7 +20,7 @@
 
     <div class="back">
 
-        <a href="/client_previous_posts">Back</a>
+        <a href="/client_upcoming_events">Back</a>
 
     </div>
 
@@ -29,36 +29,39 @@
         <table border="2" cellpadding="0" cellspacing="0">
 
             <tr>
-                <td>Job Title: </td>
-                <td>{{ $client_job_info['job_title'] }}</td>
+                <td>Event Title: </td>
+                <td>{{ $client_event_info['event_title'] }}</td>
             </tr>
 
             <tr>
-                <td>Job Price: </td>
-                <td>{{ $client_job_info['job_price'] }}</td>
+                <td>Event Prize: </td>
+                <td>{{ $client_event_info['event_prize'] }}</td>
             </tr>
 
             <tr>
-                <td>Job Category: </td>
-                <td>{{ $client_job_info['job_category'] }}</td>
+                <td>Event Category: </td>
+                <td>{{ $client_event_info['event_category'] }}</td>
             </tr>
 
             <tr>
-                <td>Job Description: </td>
-                <td>{{ $client_job_info['job_description'] }}</td>
+                <td>Event Description: </td>
+                <td>{{ $client_event_info['event_description'] }}</td>
             </tr>
 
             <tr>
-                <td>Job Delivery Time: </td>
-                <td>{{ $client_job_info['job_delivery_time'] }}</td>
+                <td>Event Start Date & Time: </td>
+                <td>{{ $client_event_info['event_start_datetime'] }}</td>
             </tr>
 
             <tr>
-                <td>Job Status: </td>
-                <td>{{ $client_job_info['job_status'] }}</td>
+                <td>Event Stop Date & Time: </td>
+                <td>{{ $client_event_info['event_stop_datetime'] }}</td>
             </tr>
 
-            
+            <tr>
+                <td>Event Status: </td>
+                <td>{{ $client_event_info['event_status'] }}</td>
+            </tr>            
 
         </table>
 

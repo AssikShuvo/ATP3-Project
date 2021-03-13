@@ -79,4 +79,20 @@ class client_event_controller extends Controller
         return Redirect('/client_upcoming_events')->with('message', 'Updated Successfully.');
     }
 
+    public function client_event_delete($id){
+
+        $client_event_info = client_event_info::find($id);
+
+        return view('Client_Event.delete_event')->with('client_event_info', $client_event_info);
+    }
+
+    public function client_event_destroy($id){
+        if(client_event_info::destroy($id)){
+            return redirect('/client_upcoming_events')->with('message', 'Deleted Successfully.');
+        }
+        else{
+            return redirect('/client_upcoming_events'.$id);
+        }        
+    }
+
 }
