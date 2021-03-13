@@ -37,8 +37,7 @@
                 <td> {{ $client_job_info[$i]['job_delivery_time'] }} </td>
 
                 <td><a class="td-details" href="/client_job_details/{{ $client_job_info[$i]['id'] }}">Details</a></td>
-                <td><a class="td-details" href="/client_job_edit/{{ $client_job_info[$i]['id'] }}">Edit</a></td>
-                <td><a class="td-details" href="/client_job_delete/{{ $client_job_info[$i]['id'] }}">Delete</a></td> 
+
             </tr>
 
             @endfor            

@@ -12,3 +12,11 @@ Route::post('/client_create_job', [client_job_controller::class, 'store_job_info
 Route::get('/client_previous_posts', [client_job_controller::class, 'client_previous_posts']);
 Route::get('/client_completed_projects', [client_job_controller::class, 'client_completed_projects']);
 Route::get('/client_ongoing_projects', [client_job_controller::class, 'client_ongoing_projects']);
+
+Route::get('/client_job_details/{id}', [client_job_controller::class, 'client_job_details']);
+
+Route::get('/client_job_edit/{id}', [client_job_controller::class, 'client_job_edit']);
+Route::post('/client_job_edit/{id}', [client_job_controller::class, 'client_job_update']);
+
+Route::get('/client_job_delete/{id}', [client_job_controller::class, 'client_job_delete']);
+Route::post('/client_job_delete/{id}', [client_job_controller::class, 'client_job_destroy']);

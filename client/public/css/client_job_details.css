@@ -9,8 +9,20 @@ body{
     background-repeat: no-repeat;
 }
 
+.header{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.head{
+	text-align: center;
+	color: indianred;
+}
+
 .back{
-	position: relative;
+	position: fixed;
 	top: 25px;
 	left: 25px;
 	font-size: 30px;
@@ -25,16 +37,8 @@ body{
 
 .tbl-content{
     position: relative;
-    top: 40px;
+    top: 180px;
     left: 25px;
-}
-
-th{
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 25px;
-    color: rgb(102, 173, 220);
 }
 
 td{
@@ -48,7 +52,7 @@ td{
 }
 
 .td-details{
-    
+    border: sloid 2x #76D7C4;
 	color: #009AFF;
 	text-decoration: none;    
 }

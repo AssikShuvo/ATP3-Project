@@ -37,13 +37,20 @@ class client_job_controller extends Controller
 
         $client_job_info = client_job_info::where('job_status', '=' , 'Completed Project')->paginate(10);;
 
-        return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
+        return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
     }
 
     public function client_ongoing_projects(){
 
         $client_job_info = client_job_info::where('job_status', '=' , 'Ongoing Project')->paginate(10);;
 
-        return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
+        return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
+    }
+
+    public function client_job_details($id){
+
+        $client_job_info = client_job_info::find($id);
+
+        return view('Client_Job.job_details')->with('client_job_info', $client_job_info);
     }
 }
