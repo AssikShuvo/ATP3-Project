@@ -96,3 +96,17 @@ body{
 	outline: none;
 	background: transparent;
 }
+
+.back{
+	position: fixed;
+	top: 25px;
+	left: 25px;
+	font-size: 30px;
+
+}
+
+.back a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}

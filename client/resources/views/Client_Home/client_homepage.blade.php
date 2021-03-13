@@ -11,6 +11,7 @@
 </head>
 
 <body>
+@csrf
 
     <div class="header">
 		
@@ -21,10 +22,29 @@
     
     </div>
 
-    <h3>Your Previous Job Posts</h3>
-    <h3>Want to hire bidder for your project? click here</h3>
-    <h3>Want to make an event? click here</h3>
+    <div class="container">
 
+        <div class="item1" >
+            <a href="/client_previous_posts">Your Previous Job Posts</a>
+        </div>
+
+        <div class="item2" >
+            <a href="/client_create_job" >Hire Bidder For Your Project</a>
+        </div>
+
+        <div class="item3">
+            <a href="" >Create Event</a>
+        </div>
+
+        <div class="item4" >
+            <a href="/client_completed_projects" >Completed Projects</a>
+        </div>
+
+        <div class="item5">
+            <a href="/client_ongoing_projects" >Ongoing Projects</a>
+        </div>
+    
+    </div>
     
 </body>
 </html>
