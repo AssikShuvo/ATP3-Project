@@ -1,0 +1,77 @@
+html,
+body{
+    min-height: 100%;
+}
+
+body{
+    background-image: url("/images/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.head{
+	text-align: center;
+	color: indianred;
+}
+
+.back{
+	position: fixed;
+	top: 25px;
+	left: 25px;
+	font-size: 30px;
+
+}
+
+.back a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}
+
+.tbl-content{
+    position: relative;
+    top: 180px;
+    left: 25px;
+}
+
+td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(221, 255, 208);
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+.delete-btn input[type="submit"]{
+    position: relative;
+    top: 175px;
+    left: 25px;
+    background: transparent;
+	border: none;
+	outline: none;
+	color: #ffffff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+    
+}
+
+.delete-msg{
+    position: relative;
+    font-size: 25px;
+    color: aquamarine;
+    top: 175px;
+    left: 25px;
+}
+

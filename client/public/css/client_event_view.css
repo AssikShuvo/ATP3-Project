@@ -1,0 +1,61 @@
+html,
+body{
+    min-height: 100%;
+}
+
+body{
+    background-image: url("/images/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back{
+	position: relative;
+	top: 25px;
+	left: 25px;
+	font-size: 30px;
+
+}
+
+.back a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}
+
+.tbl-content{
+    position: relative;
+    top: 40px;
+    left: 25px;
+}
+
+th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(102, 173, 220);
+}
+
+td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(221, 255, 208);
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+.td-details{
+	color: #009AFF;
+	text-decoration: none;    
+}
+
+.msg{
+    position:relative;
+    top: 25px;
+    left: 25px;
+    color: #009AFF;
+    font-size: 30px;
+}
