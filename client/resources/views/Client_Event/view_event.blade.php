@@ -13,6 +13,10 @@
         <a href="/client_homepage">Back</a>
     </div>
 
+    <div class="sort-by-date">
+        <a href="/client_upcoming_events_by_date">Sort By Event Start Date</a>
+    </div>
+
     <div class="msg">
 
         @if(session()->has('message'))

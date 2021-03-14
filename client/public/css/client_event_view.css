@@ -23,6 +23,20 @@ body{
 	text-decoration: none;
 }
 
+.sort-by-date{
+	position: absolute;
+	top: 35px;
+	left: 150px;
+	font-size: 30px;
+
+}
+
+.sort-by-date a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}
+
 .tbl-content{
     position: relative;
     top: 40px;

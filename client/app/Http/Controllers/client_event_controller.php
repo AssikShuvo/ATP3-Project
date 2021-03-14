@@ -29,21 +29,25 @@ class client_event_controller extends Controller
 
     public function client_upcoming_events(){
 
-        $client_event_info = client_event_info::where('event_status', '=' , 'Upcoming Event')->paginate(10);;
+        $client_event_info = client_event_info::where('event_status', '=' , 'Upcoming Event')->paginate(10);
 
         return view('Client_Event.view_event')->with('client_event_info', $client_event_info);
     }
 
     public function client_ongoing_events(){
 
-        $client_event_info = client_event_info::where('event_status', '=' , 'Ongoing Event')->paginate(10);;
+        $client_event_info = client_event_info::orderBy('event_stop_datetime', 'DESC')
+                                                ->where('event_status', '=' , 'Ongoing Event')
+                                                ->paginate(10);
 
         return view('Client_Event.readonly_view_event')->with('client_event_info', $client_event_info);
     }
 
     public function client_finished_events(){
 
-        $client_event_info = client_event_info::where('event_status', '=' , 'Finished Event')->paginate(10);;
+        $client_event_info = client_event_info::orderBy('event_stop_datetime', 'DESC')
+                                                ->where('event_status', '=' , 'Finished Event')
+                                                ->paginate(10);
 
         return view('Client_Event.readonly_view_event')->with('client_event_info', $client_event_info);
     }
@@ -93,6 +97,14 @@ class client_event_controller extends Controller
         else{
             return redirect('/client_upcoming_events'.$id);
         }        
+    }
+
+    public function client_upcoming_events_by_date(){
+        $client_event_info = client_event_info::orderBy('event_start_datetime', 'ASC')
+                                            ->where('event_status', '=' , 'Upcoming Event')
+                                            ->paginate(10);                                           
+
+        return view('Client_Event.view_event')->with('client_event_info', $client_event_info);
     }
 
 }

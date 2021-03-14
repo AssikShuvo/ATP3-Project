@@ -52,3 +52,5 @@ Route::post('/client_event_edit/{id}', [client_event_controller::class, 'client_
 
 Route::get('/client_event_delete/{id}', [client_event_controller::class, 'client_event_delete']);
 Route::post('/client_event_delete/{id}', [client_event_controller::class, 'client_event_destroy']);
+
+Route::get('/client_upcoming_events_by_date', [client_event_controller::class, 'client_upcoming_events_by_date']);
