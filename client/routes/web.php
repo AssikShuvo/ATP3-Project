@@ -5,6 +5,10 @@ use App\Http\Controllers\client_job_controller;
 use App\Http\Controllers\client_home_controller;
 use App\Http\Controllers\client_event_controller;
 
+
+
+
+
 Route::get('/client_homepage', [client_home_controller::class, 'client_home']);
 
 Route::get('/client_create_job', [client_job_controller::class, 'client_create_job']);
@@ -21,6 +25,14 @@ Route::post('/client_job_edit/{id}', [client_job_controller::class, 'client_job_
 
 Route::get('/client_job_delete/{id}', [client_job_controller::class, 'client_job_delete']);
 Route::post('/client_job_delete/{id}', [client_job_controller::class, 'client_job_destroy']);
+
+Route::get('/client_previous_posts_by_date', [client_job_controller::class, 'client_previous_posts_by_date']);
+Route::get('/client_previous_posts_by_price', [client_job_controller::class, 'client_previous_posts_by_price']);
+
+
+
+
+
 
 
 

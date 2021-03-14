@@ -59,3 +59,31 @@ td{
     color: #009AFF;
     font-size: 30px;
 }
+
+.sort-by-date{
+	position: absolute;
+	top: 35px;
+	left: 150px;
+	font-size: 30px;
+
+}
+
+.sort-by-date a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}
+
+.sort-by-price{
+	position: absolute;
+	top: 35px;
+	left: 450px;
+	font-size: 30px;
+
+}
+
+.sort-by-price a{
+	border: sloid 2x #76D7C4;
+	color: #009AFF;
+	text-decoration: none;
+}

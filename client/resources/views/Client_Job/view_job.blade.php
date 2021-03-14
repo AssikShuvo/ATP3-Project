@@ -13,6 +13,14 @@
         <a href="/client_homepage">Back</a>
     </div>
 
+    <div class="sort-by-date">
+        <a href="/client_previous_posts_by_date">Sort By Delivery Time</a>
+    </div>
+
+    <div class="sort-by-price">
+        <a href="/client_previous_posts_by_price">Sort By Job Price</a>
+    </div>
+
     <div class="msg">
 
         @if(session()->has('message'))

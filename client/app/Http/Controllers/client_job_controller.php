@@ -28,21 +28,25 @@ class client_job_controller extends Controller
 
     public function client_previous_posts(){
 
-        $client_job_info = client_job_info::where('job_status', '=' , 'New Project')->paginate(10);;
+        $client_job_info = client_job_info::where('job_status', '=' , 'New Project')->paginate(10);
 
         return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
     }
 
     public function client_completed_projects(){
 
-        $client_job_info = client_job_info::where('job_status', '=' , 'Completed Project')->paginate(10);;
+        $client_job_info = client_job_info::orderBy('job_delivery_time', 'DESC')
+                                            ->where('job_status', '=' , 'Completed Project')
+                                            ->paginate(10);
 
         return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
     }
 
     public function client_ongoing_projects(){
 
-        $client_job_info = client_job_info::where('job_status', '=' , 'Ongoing Project')->paginate(10);;
+        $client_job_info = client_job_info::orderBy('job_delivery_time', 'ASC')
+                                            ->where('job_status', '=' , 'Ongoing Project')
+                                            ->paginate(10);
 
         return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
     }
@@ -91,6 +95,24 @@ class client_job_controller extends Controller
         else{
             return redirect('/client_previous_posts'.$id);
         }        
+    }
+
+    public function client_previous_posts_by_date(){
+
+        $client_job_info = client_job_info::orderBy('job_delivery_time', 'ASC')
+                                            ->where('job_status', '=' , 'New Project')
+                                            ->paginate(10);                                           
+
+        return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
+    }
+
+    public function client_previous_posts_by_price(){
+
+        $client_job_info = client_job_info::orderByRaw('CONVERT(job_price, SIGNED) ASC')
+                                            ->where('job_status', '=' , 'New Project')
+                                            ->paginate(10);                                            
+
+        return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
     }
 
 }
