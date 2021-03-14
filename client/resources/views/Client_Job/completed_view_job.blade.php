@@ -13,6 +13,32 @@
         <a href="/client_homepage">Back</a>
     </div>
 
+    <div class="filter-box">
+
+        <form method="post">
+        @csrf
+        
+            <select name="job_category" id="job_category" class="filter-control" data-dependent="job_category">
+
+                <option value="">Category</option>
+            
+                <option value="Development & IT" >Development & IT</option>
+                <option value="Design & Creative" >Design & Creative</option>
+                <option value="Finance & Accounting" >Finance & Accounting</option>
+                <option value="Admin & Customer Support" >Admin & Customer Support</option>
+                <option value="Engineering & Architecture" >Engineering & Architecture</option>
+                <option value="Legal" >Legal</option>
+                <option value="Sales & Marketing" >Sales & Marketing</option>
+                <option value="Writing & Translation" >Writing & Translation</option>
+
+            </select>
+
+            <input type="submit" name="submit" value="Search">
+        
+        </form>    
+        
+    </div>
+
     <div class="tbl-content">
 
         <table border="2" cellpadding="0" cellspacing="0">
@@ -36,7 +62,7 @@
                 <td> {{ $client_job_info[$i]['job_description'] }} </td>
                 <td> {{ $client_job_info[$i]['job_delivery_time'] }} </td>
 
-                <td><a class="td-details" href="/client_job_details/{{ $client_job_info[$i]['id'] }}">Details</a></td>
+                <td><a class="td-details" href="/client_completed_job_details/{{ $client_job_info[$i]['id'] }}">Details</a></td>
 
             </tr>
 

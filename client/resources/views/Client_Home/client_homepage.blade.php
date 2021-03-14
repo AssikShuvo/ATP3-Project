@@ -15,7 +15,7 @@
 
     <div class="header">
 		
-        <h1 class="head">Welcome Home</h1>
+        <h1 class="head">Welcome To Our Site</h1>
         <h2 class="head2">Hire the best freelancers</h2>
         
         <hr color="#BB8FCE">

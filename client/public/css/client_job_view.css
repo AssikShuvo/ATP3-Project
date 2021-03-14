@@ -87,3 +87,9 @@ td{
 	color: #009AFF;
 	text-decoration: none;
 }
+
+.filter-box{
+    position: absolute;
+    top: 35px;
+    left: 1200px;
+}

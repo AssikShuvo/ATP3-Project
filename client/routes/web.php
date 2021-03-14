@@ -19,6 +19,8 @@ Route::get('/client_completed_projects', [client_job_controller::class, 'client_
 Route::get('/client_ongoing_projects', [client_job_controller::class, 'client_ongoing_projects']);
 
 Route::get('/client_job_details/{id}', [client_job_controller::class, 'client_job_details']);
+Route::get('/client_ongoing_job_details/{id}', [client_job_controller::class, 'client_ongoing_job_details']);
+Route::get('/client_completed_job_details/{id}', [client_job_controller::class, 'client_completed_job_details']);
 
 Route::get('/client_job_edit/{id}', [client_job_controller::class, 'client_job_edit']);
 Route::post('/client_job_edit/{id}', [client_job_controller::class, 'client_job_update']);
@@ -28,6 +30,10 @@ Route::post('/client_job_delete/{id}', [client_job_controller::class, 'client_jo
 
 Route::get('/client_previous_posts_by_date', [client_job_controller::class, 'client_previous_posts_by_date']);
 Route::get('/client_previous_posts_by_price', [client_job_controller::class, 'client_previous_posts_by_price']);
+
+Route::post('/client_previous_posts', [client_job_controller::class, 'search_category']);
+Route::post('/client_ongoing_projects', [client_job_controller::class, 'ongoing_search_category']);
+Route::post('/client_completed_projects', [client_job_controller::class, 'completed_search_category']);
 
 
 

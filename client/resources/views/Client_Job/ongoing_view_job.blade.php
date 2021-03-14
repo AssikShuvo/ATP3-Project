@@ -13,16 +13,6 @@
         <a href="/client_homepage">Back</a>
     </div>
 
-    <div class="sort-by-date">
-        <a href="/client_previous_posts_by_date">Sort By Delivery Time</a>
-    </div>
-
-    <div class="sort-by-price">
-        <a href="/client_previous_posts_by_price">Sort By Job Price</a>
-    </div>
-
-    
-
     <div class="filter-box">
 
         <form method="post">
@@ -49,16 +39,6 @@
         
     </div>
 
-    
-
-    <div class="msg">
-
-        @if(session()->has('message'))
-            {{ session()->get('message') }}
-        @endif
-
-    </div>
-
     <div class="tbl-content">
 
         <table border="2" cellpadding="0" cellspacing="0">
@@ -82,9 +62,8 @@
                 <td> {{ $client_job_info[$i]['job_description'] }} </td>
                 <td> {{ $client_job_info[$i]['job_delivery_time'] }} </td>
 
-                <td><a class="td-details" href="/client_job_details/{{ $client_job_info[$i]['id'] }}">Details</a></td>
-                <td><a class="td-details" href="/client_job_edit/{{ $client_job_info[$i]['id'] }}">Edit</a></td>
-                <td><a class="td-details" href="/client_job_delete/{{ $client_job_info[$i]['id'] }}">Delete</a></td> 
+                <td><a class="td-details" href="/client_ongoing_job_details/{{ $client_job_info[$i]['id'] }}">Details</a></td>
+
             </tr>
 
             @endfor            

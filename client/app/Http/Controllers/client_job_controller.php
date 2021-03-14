@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\client_job_info;
+use Illuminate\Support\Facades\DB;
 
 class client_job_controller extends Controller
 {
+
+
+//////////////////////////////// Create Job /////////////////////////////
+
     public function client_create_job(){
         return view('Client_Job.create_job');
     }
@@ -26,6 +31,12 @@ class client_job_controller extends Controller
         return redirect('/client_homepage');
     }
 
+
+
+
+
+///////////////////////////////// Views ///////////////////////////////////////
+
     public function client_previous_posts(){
 
         $client_job_info = client_job_info::where('job_status', '=' , 'New Project')->paginate(10);
@@ -39,7 +50,7 @@ class client_job_controller extends Controller
                                             ->where('job_status', '=' , 'Completed Project')
                                             ->paginate(10);
 
-        return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
+        return view('Client_Job.completed_view_job')->with('client_job_info', $client_job_info);
     }
 
     public function client_ongoing_projects(){
@@ -48,8 +59,14 @@ class client_job_controller extends Controller
                                             ->where('job_status', '=' , 'Ongoing Project')
                                             ->paginate(10);
 
-        return view('Client_Job.readonly_view_job')->with('client_job_info', $client_job_info);
+        return view('Client_Job.ongoing_view_job')->with('client_job_info', $client_job_info);
     }
+
+
+
+
+
+////////////////////////// Details Functions //////////////////////////////////////////////
 
     public function client_job_details($id){
 
@@ -57,6 +74,26 @@ class client_job_controller extends Controller
 
         return view('Client_Job.job_details')->with('client_job_info', $client_job_info);
     }
+
+    public function client_ongoing_job_details($id){
+
+        $client_job_info = client_job_info::find($id);
+
+        return view('Client_Job.ongoing_job_details')->with('client_job_info', $client_job_info);
+    }
+
+    public function client_completed_job_details($id){
+
+        $client_job_info = client_job_info::find($id);
+
+        return view('Client_Job.completed_job_details')->with('client_job_info', $client_job_info);
+    }
+
+
+
+
+
+//////////////////////////// Update Functions ///////////////////////////////
 
     public function client_job_edit($id){
 
@@ -81,6 +118,12 @@ class client_job_controller extends Controller
         return Redirect('/client_previous_posts')->with('message', 'Updated Successfully.');
     }
 
+
+
+
+
+///////////////// Delete Functions ///////////////////////////
+
     public function client_job_delete($id){
 
         $client_job_info = client_job_info::find($id);
@@ -96,6 +139,12 @@ class client_job_controller extends Controller
             return redirect('/client_previous_posts'.$id);
         }        
     }
+
+
+
+
+
+//////////////////// Sorting Functions /////////////////////////
 
     public function client_previous_posts_by_date(){
 
@@ -115,4 +164,37 @@ class client_job_controller extends Controller
         return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
     }
 
+
+
+
+
+
+///////////////// Search Functions ///////////////////
+
+    public function search_category(Request $req){
+
+        $client_job_info = client_job_info::where('job_category', '=', $req->job_category)
+                                            ->where('job_status', '=', 'New Project')
+                                            ->get();
+
+         return view('Client_Job.view_job')->with('client_job_info', $client_job_info);
+    }
+
+    public function ongoing_search_category(Request $req){
+
+        $client_job_info = client_job_info::where('job_category', '=', $req->job_category)
+                                            ->where('job_status', '=', 'Ongoing Project')
+                                            ->get();
+
+         return view('Client_Job.ongoing_view_job')->with('client_job_info', $client_job_info);
+    }
+
+    public function completed_search_category(Request $req){
+
+        $client_job_info = client_job_info::where('job_category', '=', $req->job_category)
+                                            ->where('job_status', '=', 'Completed Project')
+                                            ->get();
+
+         return view('Client_Job.completed_view_job')->with('client_job_info', $client_job_info);
+    }
 }
